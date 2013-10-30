@@ -1,0 +1,11 @@
+flask-babel (0.8~ppa5) precise; urgency=low
+
+  * Rebuild for precise
+
+ -- Vincent Vinet <vvinet@revolutionlinux.com>  Wed, 30 Oct 2013 13:25:49 -0400
+
+flask-babel (0.8~ppa4) lucid; urgency=low
+
+  * Initial release.
+
+ -- Simon Poirier <spoirier@rlnx.com>  Tue, 13 Dec 2011 16:45:08 -0500

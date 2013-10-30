@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+
+# normally we should run the tests at build time,
+# but they require flask-testing, which is not packaged yet.
+# So skip them for now.
+
+
+%:
+	dh --buildsystem=python_distutils $@
+
+build:
+	dh --buildsystem=python_distutils $@
+
+	cd docs && PYTHONPATH=$(CURDIR)/ make html
+	rm docs/_build/html/_static/jquery.js
+
+clean:
+	dh --buildsystem=python_distutils $@
+	rm -rf docs/_build
+
+override_dh_compress:
+	dh_compress -X/html/

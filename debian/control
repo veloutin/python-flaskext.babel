@@ -1,0 +1,19 @@
+Source: flask-babel
+Maintainer: simpoir <simpoir@gmail.com>
+Section: python
+Priority: optional
+Build-Depends: python (>= 2.6.0-0), python-setuptools (>= 0.6b3), debhelper (>= 7.0.50~)
+Build-Depends-Indep: python-sphinx (>= 0.6), python-flask, python-wtforms
+Standards-Version: 3.9.2
+Homepage: http://packages.python.org/Flask-Babel/
+
+Package: python-flaskext.babel
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}, python-flask (>= 0.6.1-2), python-werkzeug (>= 0.6.1), python-wtforms (>= 0.6.1), python-jinja2 (>= 2.4), python (>= 2.5.4-5~) | python-simplejson
+XB-Python-Version: ${python:Versions}
+Provides: ${python:Provides}
+Conflicts: python-flaskext.babel
+Replaces: python-flaskext.babel
+Description: Flask extension for i18n
+ Flask-Babel is an extension to Flask that adds i18n and l10n support to any
+ Flask application with the help of babel, pytz and speaklater.
