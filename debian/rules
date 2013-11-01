@@ -7,17 +7,13 @@
 
 
 %:
-	dh --buildsystem=python_distutils $@
+	dh $@ --with python2,sphinxdoc
 
-build:
-	dh --buildsystem=python_distutils $@
+override_dh_installdocs:
+	sphinx-build docs build/html
+	dh_installdocs -ppython-flaskext.babel build/html
 
-	cd docs && PYTHONPATH=$(CURDIR)/ make html
-	rm docs/_build/html/_static/jquery.js
-
-clean:
-	dh --buildsystem=python_distutils $@
-	rm -rf docs/_build
-
-override_dh_compress:
-	dh_compress -X/html/
+override_dh_auto_clean:
+	rm -rf build
+	rm -rf *.egg-info
+	find . \( -name '*.py[co]' -or -name '\._*' -or -name '\.DS_Store' \) -delete

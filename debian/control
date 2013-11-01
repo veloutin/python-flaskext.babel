@@ -1,17 +1,20 @@
 Source: flask-babel
-Maintainer: simpoir <simpoir@gmail.com>
+Maintainer: Vincent Vinet <vvinet@revolutionlinux.com>
 Section: python
 Priority: optional
-Build-Depends: python (>= 2.6.0-0), python-setuptools (>= 0.6b3), debhelper (>= 7.0.50~)
-Build-Depends-Indep: python-sphinx (>= 0.6), python-flask, python-wtforms
-Standards-Version: 3.9.2
+Build-Depends: python (>= 2.6.0-0), debhelper (>= 9), python-sphinx,
+    python-flask, python-wtforms, python-babel, python-tz, python-speaklater,
+    python-setuptools, python-all
+Standards-Version: 3.9.3
 Homepage: http://packages.python.org/Flask-Babel/
 
 Package: python-flaskext.babel
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends}, python-flask (>= 0.6.1-2), python-werkzeug (>= 0.6.1), python-wtforms (>= 0.6.1), python-jinja2 (>= 2.4), python (>= 2.5.4-5~) | python-simplejson
-XB-Python-Version: ${python:Versions}
-Provides: ${python:Provides}
+Depends: ${python:Depends}, python-flask (>= 0.6.1-2), python-speaklater,
+     python-werkzeug (>= 0.6.1), python-wtforms (>= 0.6.1),
+     python-jinja2 (>= 2.4), python-babel, python-tz,
+     python (>= 2.5.4-5~) | python-simplejson
+Provides: python-flaskext.babel
 Conflicts: python-flaskext.babel
 Replaces: python-flaskext.babel
 Description: Flask extension for i18n
